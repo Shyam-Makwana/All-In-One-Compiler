@@ -1,8 +1,8 @@
 
 # Project definition
-**Make a compiler for language described as follows-
-Following is a valid sentence in a string, char and int operation based compiler. Generate its appropriate
-language description and compiler**
+**Make a compiler for language described as follows:-**
+	> Following is a valid sentence in a string, char and int operation based compiler. Generate its appropriate
+language description and compiler
 
 Valid sentences in language :
 *	string s;
