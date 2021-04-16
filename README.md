@@ -1,5 +1,5 @@
 
-# Project defination
+# Project definition
 **Make a compiler for language described as follows-
 Following is a valid sentence in a string, char and int operation based compiler. Generate its appropriate
 language description and compiler-**
@@ -22,10 +22,11 @@ EXPR  ->  'string' VARNAME STR
        |  'int' VARNAME INT
 
 STR   ->  ASSGN STR1 
-       | \epsilon                        	 		 	    
-STR1  ->  VARNAME SOP VARNAME |  "VALUESTR" STR2     
-
-STR2  ->  SOP "VALUESTR" | ^                                 
+       |  ε  
+STR1  ->  VARNAME SOP VARNAME 
+       |  "VALUESTR" STR2     
+STR2  ->  SOP "VALUESTR" 
+       |  ε                                 
 
 CHAR  ->  ASSGN CHAR1                                	      
 CHAR1 ->  'VALUECHAR'                                    
@@ -34,7 +35,9 @@ INT   ->  ASSGN INT1
 INT1  ->  VARNAME IOP VARNAME                     
 
 ASSGN ->  '='
-SOP   ->  '+' | '-' | '<->'
+SOP   ->  '+' 
+       | '-' 
+       | '<->'
 IOP   ->  '?'
  
 ```
