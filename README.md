@@ -21,7 +21,8 @@ EXPR  ->  'string' VARNAME STR
        |  'char' VARNAME CHAR
        |  'int' VARNAME INT
 
-STR   ->  ASSGN STR1 | ^                        	 		 	    
+STR   ->  ASSGN STR1 
+       | \epsilon                        	 		 	    
 STR1  ->  VARNAME SOP VARNAME |  "VALUESTR" STR2     
 
 STR2  ->  SOP "VALUESTR" | ^                                 
