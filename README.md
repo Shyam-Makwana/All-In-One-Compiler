@@ -8,9 +8,9 @@ Valid sentences in language :
 *	string s;
 *	string str = “Shyam”;
 *	string str = pqr + xyz;
-*	string str = “Shyam” + “Mahesh”;
+*	string str = “Shyam” + “Makwana”;
 *	char c;
-*	char c = ‘A’;
+*	char c = ‘S’;
 *	int pos = pqr ? xyz;
 
 # Grammer Rules
