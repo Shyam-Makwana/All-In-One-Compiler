@@ -2,7 +2,7 @@
 # Project definition
 **Make a compiler for language described as follows-
 Following is a valid sentence in a string, char and int operation based compiler. Generate its appropriate
-language description and compiler-**
+language description and compiler**
 
 Valid sentences in language :
 *	string s;
@@ -13,7 +13,7 @@ Valid sentences in language :
 *	char c = ‘S’;
 *	int pos = pqr ? xyz;
 
-# Grammer Rules
+# Grammar for Compiler
 ```
 START ->  EXPR SEMICOLON NEWLINE
 
@@ -42,8 +42,8 @@ IOP   ->  '?'
  
 ```
 
-# WebApp
-Technologies used : HTML ,  bootstrap , jquery , NodeJS , Express 
+# Technologies used
+HTML, Js, Ajax, bootstrap, jquery, NodeJS, Express 
 	
 ###  To Run locally 
 * clone the repo
