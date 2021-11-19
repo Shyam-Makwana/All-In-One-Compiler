@@ -18,21 +18,23 @@ app.get("/", function (req, res) {
 });
 
 app.post("/api", async function (req, res) {
+  console.log("Starting......");
   var input = req.body.input;
+  console.log(input);
   input = input.concat("\n");
   fsPromises.writeFile("in.txt", input, function (err) {
     if (err) throw err;
-    // console.log("error to save " + filename);
+    console.log("error to save " + filename);
   });
   // var command = "a.out < in.txt";
   var command = "chmod 777 a.out && a.out < in.txt";
   var x = {};
   await exec(command, (error, stdout, stderr) => {
-    // console.log( "From the execute function");
+    console.log( "From the execute function");
     x = stdout;
-    // console.log(stdout);
-    // console.log('StdError = ',stderr);
-    // console.log('Error = ',error);
+    console.log(stdout);
+    console.log('StdError = ',stderr);
+    console.log('Error = ',error);
     res.send(x);
     // console.log(r);
   });
