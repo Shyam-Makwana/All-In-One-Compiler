@@ -1,1 +1,6 @@
-string s;
+S
+3
+S->Aa|Bb
+A->^
+B->^
+

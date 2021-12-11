@@ -39,25 +39,73 @@
         textarea {
             resize: none;
         }
+        .marr-nav{
+            margin-top: 50px;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 </head>
 
-<body class="container">
-    <nav class="navbar navbar-default navbar-fixed-top">
+<script>
+    $(document).ready(function () {
+
+        $('#Run').click(function () {
+            var x = $("#ip").val().trim();
+            console.log("h", x);
+            $.ajax({
+                url: "/api/compiler",
+                type: "POST",
+                dataType: "html",
+                data: {
+                    input: x
+                },
+                success: function (html) {
+                    console.log(html);
+                    $("#op").html(html);
+                },
+                error: function (err) {
+                    console.log("An error ocurred while loading data ...");
+                }
+            });
+        });
+    });
+</script>
+
+
+<body>
+    <nav class="navbar navbar-default mb-5">
         <div class="container">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="/">Home</a></li>
-                <li role="presentation"><a href="/compiler">Compiler</a></li>
+                <li role="presentation"><a href="/">Home</a></li>
+                <li role="presentation" class="active"><a href="/compiler">Compiler</a></li>
                 <li role="presentation"><a href="/firstandfollow">First and Follow</a></li>
                 <li role="presentation"><a href="/leftfactoring">Left Factoring</a></li>
                 <li role="presentation"><a href="/leftrecursion">Left Recursion</a></li>
                 <li role="presentation"><a href="/token">Token Generation</a></li>
               </ul>
         </div>
-      </nav>
+    </nav>
+    <div class="container marr-nav">
+    <h3 class="text-center"><strong> String, Char and Int Operation Compiler </strong></h3>
+    <form action="/" id="searchForm" class="form mt-4">
+        <div class="mb-3">
+            <label for="ip" class="form-label">
+                <h4><strong>Enter your input string</strong></h4>
+            </label>
+            <textarea placeholder='string s = "Shyam" + "Parth";' name="ip" class="form-control" id="ip"
+                rows="7"></textarea>
+        </div>
+        <input type="button" class="btn btn-primary mb-3" name="Run" value="Run" id="Run" />
+        <div class="mb-3">
+            <label for="op" class="form-label">
+                <h4><strong>Output</strong></h4>
+            </label>
+            <textarea readonly name="op" class="form-control" id="op" rows="10"></textarea>
+        </div>
+    </form>
+</div>
 </body>
 
 
