@@ -37,6 +37,10 @@ app.get("/token", function (req, res) {
   res.sendFile(__dirname + "/public/" + "token.html");
 });
 
+app.get("/ascii", function (req, res) {
+  res.sendFile(__dirname + "/public/" + "ascii.html");
+});
+
 app.post("/api/compiler", async function (req, res) {
   // console.log("Starting......");
   var input = req.body.input;
